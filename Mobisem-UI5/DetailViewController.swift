@@ -13,6 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     
     // VARS
+    var allProducts = Product.createProduct()
     var product: Product?
     
     override func viewDidLoad() {
@@ -32,4 +33,19 @@ class DetailViewController: UIViewController {
     }
 
 
+}
+
+extension DetailViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return allProducts.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let p = indexPath.item
+        let cell: DetailCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailCellIdentifier", for: indexPath) as! DetailCollectionViewCell
+        cell.product = self.allProducts[p]
+        return cell
+    }
+    
 }

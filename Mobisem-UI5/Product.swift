@@ -23,7 +23,9 @@ class Product {
     static func createProduct() -> [Product] {
         return [
             Product(title: "Stylish Chair", featuredImage: UIImage(named: "concept-chair")!),
-            Product(title: "Another Stylish Chair", featuredImage: UIImage(named: "concept-chair-2")!)
+            Product(title: "Another Stylish Chair", featuredImage: UIImage(named: "concept-chair-2")!),
+            Product(title: "Another Chair", featuredImage: UIImage(named: "concept-chair")!),
+            Product(title: "Test Chair", featuredImage: UIImage(named: "concept-chair-2")!)
         ]
     }
 }
